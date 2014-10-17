@@ -1,4 +1,4 @@
-gryphie
+Gryphie
 =======
 
 Gryphie makes it easy to wire that thing you're working on to the various
@@ -11,8 +11,8 @@ time-series storage and visualization systems like
 
 If you're sick of trying to track multiple language bindings for different
 metrics-backends in your codebase, then you'll probably appreciate Gryphie.
-With gryphie, your thing can emit metrics to any combination of these systems
-simultaniously. You can measure something, and then easily send your
+With Gryphie, your thing can emit metrics to any combination of these systems
+simultaneously. You can measure something, and then easily send your
 measurement to two different Graphite systems, an Influx box and Librato.  At
 the moment Gryphie only works with python things, but soon it'll work with Go
 and Ruby things too. Gryphie makes it pretty easy to expose different back-end
@@ -61,8 +61,8 @@ for how easy it is to deal with metrics backends in Gryphie:
 ### Gryphie tries to be pedantic without being annoying
 
 Gryphie tries to insulate you from wire protocol details, while still
-optomizing for transport effeciency by buffering and combining individual
-measuremnets, and using compression and binary protocols where possible.  It
+optimizing for transport efficiency by buffering and combining individual
+measurements, and using compression and binary protocols where possible.  It
 also tries to do this with a minimum of dependencies.  Gryphie's python
 implementation, for example, is built wholly on top of the python standard
 library, and doesn't use any external dependencies at all. 
