@@ -9,15 +9,16 @@ time-series storage and visualization systems like
 [OpenTSDB](http://opentsdb.org). 
 
 #### Talk to lots of different metrics back-ends at the same time
-If you're sick of trying to track multiple language bindings for different
-metrics-backends in your codebase, then you'll probably appreciate Gryphie.
-With Gryphie, your thing can emit metrics to any combination of these systems
-simultaneously. You can measure something, and then easily send your
-measurement to two different Graphite systems, an Influx box and Librato.  At
-the moment Gryphie only works with python things, but soon it'll work with Go
-and Ruby things too. Gryphie makes it pretty easy to expose different back-end
-metrics systems to your users without forcing you to implement a binding for
-each.
+Gryphie makes it pretty easy to expose different back-end metrics systems to
+your users without forcing you to implement a binding for each.  If you're sick
+of trying to track multiple language bindings for different metrics-backends in
+your codebase, then you'll probably appreciate Gryphie.  With Gryphie, your
+thing can emit metrics to any combination of these systems simultaneously. You
+can measure something, and then easily send your measurement to two different
+Graphite systems, an Influx box and Librato.  At the moment Gryphie only works
+with python things, but I'm working on making Gryphie work with Go and Ruby
+things too. 
+
 
 #### Gryphie is pretty easy to wrap your head around
 Gryphie implements [carbon](), [statsd](), and [librato
@@ -60,20 +61,29 @@ deal with metrics backends using Gryphie:
          sender.send(datapoints)
 
 #### Efficient and pedantic, but never annoying
-Gryphie tries to insulate you from wire protocol details, while still
-optimizing for transport efficiency by doing things like buffering and
-combining individual measurements, and using compression and binary protocols
-where possible.  It also tries to do this with a minimum of dependencies.
-Gryphie's python implementation, for example, reimplements each protocol on top
-of the python standard library, and doesn't use any external dependencies.
-Gryphie isn't just a wrapper around other protocol bindings.
+Many monitoring tools start out hard-wired to a particular thingie, and then,
+when they become more successful, some poor schlep winds up ripping out the
+hard-wired back-end code, and replaceing it with something more modular. This
+usually works out ok, but some back-end modules get more love than others.  My
+goal with Gryphie is to make a very accessable, high-quality implementation of
+the most popular protocols available. I want Gryphie to be so good that people
+will turn to it as a reference implementation for these protocols, even if they
+don't choose to link in Gryphie directly. 
+
+So Gryphie tries to insulate you from wire protocol details, while still
+optimizing for transport efficiency by doing things like buffering, combining
+individual measurements, and using compression and binary protocols where
+possible.  It also tries to do this with a minimum of dependencies.  Gryphie's
+python implementation, for example, reimplements each protocol on top of the
+python standard library, and doesn't use any external dependencies.  Gryphie
+isn't just a wrapper around other protocol bindings.
 
 #### Gryphie is a work in progress
 I unintentionally created gryphie while ripping the carbon code out of
 [graphios](), and thought it might be useful to other engineers as a
 stand-alone thing. I have a lot of work to do to make Gryphie into the thing I
 actually want to use myself. It needs meaningful documentation, Go and Ruby
-support, features beyond writing so it can export series from the various
+support, read/pagination support so it can export series from the various
 backends, and more advanced api features like Librato Annotation support.  But
 if you're working in Python, and you just want to push metrics, Gryphie works
 pretty well today, and its write interface shouldn't change all that much
@@ -83,4 +93,4 @@ pretty well today, and its write interface shouldn't change all that much
 Gryphie isn't a monitoring tool. It's a tool for people who work on monitoring
 tools. So, for example, if you want to quickly write an export plug-in for
 Tool-X, so that Tool-X can talk to Graphite, you could use Gryphie to implement
-your plugin.  
+your plugin and get statsd and librato support for free.
