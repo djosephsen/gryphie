@@ -10,14 +10,14 @@ time-series storage and visualization systems like
 
 #### Talk to lots of different metrics back-ends at the same time
 Gryphie makes it pretty easy to expose different back-end metrics systems to
-your users without forcing you to implement a binding for each.  If you're sick
-of trying to track multiple language bindings for different metrics-backends in
-your codebase, then you'll probably appreciate Gryphie.  With Gryphie, your
-thing can emit metrics to any combination of these systems simultaneously. You
-can measure something, and then easily send your measurement to two different
-Graphite systems, an Influx box and Librato.  At the moment Gryphie only works
-with python things, but I'm working on making Gryphie work with Go and Ruby
-things too. 
+your users while saving you the headache of implementing a binding for each.
+If you're sick of trying to track multiple bindings for different
+metrics-backends in your codebase, then you'll probably appreciate Gryphie.
+With Gryphie, your thing can emit metrics to any combination of these systems
+simultaneously. You can measure something, and then easily send your
+measurement to two different Graphite systems, an Influx box and Librato.  At
+the moment Gryphie only works with python things, but I'm working on making
+Gryphie work with Go and Ruby things too. 
 
 
 #### Gryphie is pretty easy to wrap your head around
