@@ -65,7 +65,7 @@ easy it is to deal with metrics backends using Gryphie:
 #### Efficient and pedantic, but never annoying
 Many monitoring tools start out hard-wired to a particular thingie, and then,
 when they become more successful, some poor schlep winds up ripping out the
-hard-wired back-end code, and replaceing it with something more modular. This
+hard-wired back-end code, and replacing it with something more modular. This
 usually works out ok, but some back-end modules get more love than others.  My
 goal with Gryphie is to make a very accessable, high-quality implementation of
 the most popular protocols available. I want Gryphie to be so good that people
@@ -82,14 +82,17 @@ isn't just a wrapper around other protocol bindings.
 
 #### Gryphie is a work in progress
 I unintentionally created gryphie while ripping the carbon code out of
-[graphios](), and thought it might be useful to other engineers as a
-stand-alone thing. I have a lot of work to do to make Gryphie into the thing I
-actually want to use myself. It needs meaningful documentation, Go and Ruby
-support, read/pagination support so it can export series from the various
-backends, and more advanced api features like Librato Annotation support.  But
-if you're working in Python, and you just want to push metrics, Gryphie works
-pretty well today, and its write interface shouldn't change all that much
-(famous last words). 
+[graphios](). Then, when I started dipping into the same code to play with
+another project, it occured to me that it might be useful to other engineers as
+a stand-alone thing. 
+
+I have a lot of work to do to make Gryphie into the thing I actually want to
+use myself. It needs meaningful documentation, Go and Ruby support,
+read/pagination support so it can export series from the various backends, and
+more advanced api features like Librato Annotation support.  But if you're
+working in Python, and you just want to push metrics, Gryphie works pretty well
+today, and its write interface shouldn't change all that much (famous last
+words).
 
 #### What about project-X ?
 Gryphie isn't a monitoring tool. It's a tool for people who work on monitoring
