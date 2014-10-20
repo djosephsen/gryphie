@@ -21,15 +21,17 @@ things too.
 
 
 #### Gryphie is pretty easy to wrap your head around
-Gryphie implements [carbon](), [statsd](), and [librato
-api](http://metrics.librato.com) objects, which use common interface semantics
-for things like sending metrics .  The general pattern is, you instantiate an
-object for each back-end you want to talk to, passing each a small
-configuration struct when you first instantiate it. I like to keep an array of
-references to them, so when I'm ready to send a measurement, I can just iterate
-across the backend objects, calling the send() method of each in turn. Here's a
-small Python program that should give you a good feel for how easy it is to
-deal with metrics backends using Gryphie: 
+Gryphie implements
+[carbon](http://graphite.readthedocs.org/en/latest/feeding-carbon.html),
+[statsd](https://github.com/b/statsd_spec), and [librato
+api](http://metrics.librato.com) objects, all of which use common interface
+semantics for things like sending metrics .  The general pattern is, you
+instantiate an object for each back-end you want to talk to, passing each a
+small configuration struct when you first instantiate it. I like to keep an
+array of references to them, so when I'm ready to send a measurement, I can
+just iterate across the backend objects, calling the send() method of each in
+turn. Here's a small Python program that should give you a good feel for how
+easy it is to deal with metrics backends using Gryphie: 
 
      import time
      import gryphie as g
