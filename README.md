@@ -94,8 +94,17 @@ working in Python, and you just want to push metrics, Gryphie works pretty well
 today, and its write interface shouldn't change all that much (famous last
 words).
 
+FWIW there's a pretty good chance that Gryphie will continue to get hacked on
+by me for the forseeable future, since it's VERY relevant to the hacking I do
+for my day job. Also famous last words I know. 
+
 #### What about project-X ?
 Gryphie isn't a monitoring tool. It's a tool for people who work on monitoring
 tools. So, for example, if you want to quickly write an export plug-in for
 Tool-X, so that Tool-X can talk to Graphite, you could use Gryphie to implement
-your plugin and get statsd and librato support for free.
+your plugin and get statsd and librato support for free.  I'm not aware of any
+overlap in this particular category other than the individual protocol bindings
+themselves, and those bindings are obviously focused on providing an interface
+to the back-end they're attached to rather than providing a common,
+high-quality interface to many different back-ends. If you know of something
+let me know, and I'll probably abandon this and throw in with them. 
