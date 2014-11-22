@@ -82,7 +82,7 @@ isn't just a wrapper around other protocol bindings.
 
 #### Gryphie is a work in progress
 I unintentionally created gryphie while ripping the carbon code out of
-[graphios](). Then, when I started dipping into the same code to play with
+[graphios](https://github.com/shawn-sterling/graphios). Then, when I started dipping into the same code to play with
 another project, it occured to me that it might be useful to other engineers as
 a stand-alone thing. 
 
